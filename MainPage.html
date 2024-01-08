@@ -18,10 +18,33 @@
     <style>
     /* Header/logo Title */
     .header {
-        padding: 80px;
+        margin-top: 40px;
+        position: relative;
+        margin-bottom: 40px;
+        padding: 5px;
         text-align: center;
         background: #1a5bbc;
         color: white;
+    }
+    .header p {
+        font-size: medium;
+    }
+    nav {
+        position:absolute;
+        background:#000000;
+        text-align:center;
+        width:100%;
+        max-width: 15%;
+        top:70%;
+        left:0% 
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+    li {
+        margin-right: 10px;
     }
     .header h1 {
         font-size: 40px;
@@ -31,9 +54,18 @@
         grid-template-columns:20% 20% 20% 20%;
         align-items: center;
     }
-  </style>
+    </style>
     <body>
         <div class="header">
+            <!-- Navigation Bar -->
+            <nav>
+                <ul>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Collections.html">Collections</a></li>
+                    <li><a href="Instagram.html">Instagram</a></li>
+                    <li><a href="Exhibitions.html">Exhibitions</a></li>
+                </ul>
+            </nav>
             <h1>Light and Worlds Inbetween</h1>
             <p> Artist Website: Alex Smith :P</p>
         </div>
@@ -54,9 +86,8 @@
             </div>
  
         </main>
-        <aside>Aside</aside>
         <footer>
-            <h2>Made by the one who cares for them most in the world, love you endlessly Alex</h2>
+            <p>Made by the one who cares for them most in the world, love you endlessly Alex </p>
         </footer>
     </body>
     </html>
