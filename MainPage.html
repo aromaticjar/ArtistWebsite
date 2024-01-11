@@ -20,31 +20,36 @@
     <style>
     .topnav {
         overflow: hidden;
-        background-color: black;
+        background-color: transparent;
     }
 
     .topnav a {
         float: left;
-        color: #f2f2f2;
+        color: black;
         text-align: center;
+        background-color: ;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: 20px;
+        margin-right: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+
     }
-    
     .topnav a:hover {
-        background-color: #ddd;
+        background-color: transparent;
         color: black;
     }
     .topnav a.active {
-        background-color: #1a5bbc;
-        color: white;
+        background-color: transparent;
+        color: black;
     }
     .dropbtn {
-        background-color: black;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
+        background-color: transparent;
+        color: black;
+        padding: 14px 16px;
+        font-size: 20px;
+        margin-right: 20px;
+        font-family: Arial, Helvetica, sans-serif;
         border: none;
         cursor:pointer
     }
@@ -75,87 +80,209 @@
     .dropdown-content a:hover {background-color: #ddd;}
     .dropdown:hover .dropdown-content {display: block;}
     .dropdown:hover .dropbtn {background-color: #f1f1f1;color: black;}
+
+    .hamburger1 {
+  height: 45px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  z-index: 120;
+  position: fixed;
+  right: 5px;
+  top: 0
+}
+
+.hamburger1 div {
+  background-color: rgb(61, 61, 61);
+  position: relative;
+  width: 40px;
+  height: 5px;
+  margin-top: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+  display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle1:checked ~ .menu1 {
+  height: 340px;
+}
+
+
+/* Menu */
+.menu1 {
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: 1fr repeat(4, 0.5fr);
+  grid-row-gap: 25px;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  width: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+  transition: height .4s ease;
+  z-index: 120;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu1 a:first-child {
+  margin-top: 40px;
+}
+
+.menu1 a:last-child {
+  margin-bottom: 40px;
+}
+
+.link {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  font: 700 20px 'Oswald', sans-serif;
+}
+
+.link:hover {
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
     /* Header/logo Title */
-    .header {
+.header {
         margin-top: 10px;
         position: relative;
-        margin-bottom: 40px;
-        padding: 5px;
         text-align: center;
-        background: #1a5bbc;
+        background-image:url("images/nature.jpg");
+        background-size: cover;
+        background-position: center;
         color: white;
+        height: 500px;
     }
-    .header p {
-        font-size: medium;
-    }
-    .header h1 {
-        font-size: 40px;
-    }
+.header p {
+    font-size: medium;
+}
+.header h1 {
+    font-size: 40px;
+}
     .gallery {
         display: grid;
-        grid-template-columns:25% 25% 25% 25%;
-        align-items: center;
+        grid-template-columns:33% 33% 33%;
+        width: 100%;
+        grid-column-gap: 5px;
+        
+    }
+    .gallery img{
+        height: 500px;
+        width: 100%;
+        display: block;
     }
     @media only screen and (max-width: 750px) {
         .gallery {
             grid-template-columns: 100%;
         }
     }
-    
+    .topnav-navigation {
+        position:absolute;
+        left: 35%;
+    }
+    .footer{
+        position: absolute;
+        left: 35%;
+        bottom: 0;
+        height: 100px;
+        width: 700px;
+        text-align: left;
+
+    }
     </style>
     <body>
-        <div class="topnav">
-            <a class="active" href="MainPage.html">Home</a>
-            <div class='dropdown'>
-                <button class="dropbtn">Gallery
-                </button>
-                <div class="dropdown-content">
-                    <a href="Abstract_Gallery.html">Abstract</a>
-                    <a href="Patterns_Gallery.html">Patterns</a>
-                    <a href="Objects_Gallery.html">Objects</a>
-                    <a href="Light_Gallery.html">Light</a>
+        <!-- Navigation Panel-->
+            <div class="topnav">
+                <a class="active" href="MainPage.html">Alex Smith</a>
+                <div class="topnav-navigation">
+                    <div class='dropdown'>
+                        <button class="dropbtn">Gallery</button>
+                        <div class="dropdown-content">
+                            <a href="Current.html">Paintings 2023-Present</a>
+                            <a href="Patterns_Gallery.html">Paintings 2016-2022</a>
+                            <a href="Objects_Gallery.html">Sketches</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Socials</button>
+                        <div class="dropdown-content">
+                            <a href="https:/instagram_profile.com" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+                            <a href="https:/twitter_profile.com" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
+                            <a href="https:/facebook_profile.com" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+                        </div>
+                    </div>
+                    <a href="About">About</a>
+                    <a href="Shop">Shop</a>
                 </div>
             </div>
-            
-            <div class="dropdown">
-                <button class="dropbtn">Socials
-                </button>
-                <div class="dropdown-content">
-                    <a href="https:/instagram_profile.com" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-                    <a href="https:/twitter_profile.com" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
-                    <a href="https:/facebook_profile.com" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
-                </div>
-            </div>
-            <a href="About">About</a>
-            <a href="Shop">Shop</a>
+
+            <section class="topnav-collapsed">
+                <nav id="navbar" class="navigation" role="navigation">
+                    <input id="toggle1" type="checkbox">
+                    <label class="hamburger1" for="toggle1">
+                        <div class="top"></div>
+                        <div class="meat"></div>
+                        <div class="bottom"></div>
+                    </label>
+                    <nav class="menu1">
+                        <a class="link" href="Current_test.html">Paintings 2023-Present</a>
+                        <a class="link" href="Older.html">Paintings 2016-2022</a>
+                        <a class="link" href="About.html">About</a>
+                        <a class="link" href="Contact.html">Contact</a>
+                    </nav>
+                </nav>
+            </section>
+                
         </div>
-        </div>
-            <div class="header">
-            <!-- Header -->
+
+        <!-- Header-->
+        <div class="header">
             <h1>Light and Worlds In-between</h1>
-            <p> Artist Website: Alex Smith</p>
-            </div>
-            <!-- Main Content -->
-            <main id="content" class="main-content">
-                <header>
-                    <h1>Explore Gallery Spaces</h1>
-                </header>
-                <div class="gallery">
-                    <h2>Everyday Objects</h2>
-                    <a href="pointToObjectsGallery"><img src="images/blanky.png" alt="Objects" style="width:100%"></a>
-                    <h2> Abstractions</h2>
-                    <a href="pointToAbstractionGallery"><img src="images/Mothman.png" alt="Abstractions" style="width:100%"></a>
-                    <h2>Patterns</h2>
-                    <a href="pointToPatternsGallery"><img src="images/bubbles.png" alt="Patterns" style="width:100%"></a>
-                    <h2>Light</h2>
-                    <a href="pointToALightGallery"><img src="images/ViewPort.png" alt="Light" style="width:100%"></a>
-                </div>
- 
-            </main>
         </div>
+        <!-- Main Content -->
+        <main id="content" class="main-content">
+            <header style="text-align: center;">
+                <h1>Explore Gallery Spaces</h1>
+            </header>
+            <div class="gallery">
+                <a href="Current.html"><img src="images/ViewPort.png" alt="Current" ><figcaption style="font-size:large"> Paintings 2023-Current</figcaption></a>
+                <a href="Older.html"><img src="images/covid_portrait.png" alt="Older" ><figcaption>Paintings 2016-2022</figcaption></a>
+                <a href="Sketches.html"><img src="images/horse_sketch.png" alt="Sketches"><figcaption>Sketches</figcaption></a>
+            </div>
+ 
+        </main>
         
-        <footer>
-            <p>Made by the one who cares for them most in the world, love you endlessly Alex </p>
-        </footer>
+        <div class="footer">Made by the one who cares for them most in the world, love you endlessly Alex</div>
     </body>
     </html>

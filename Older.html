@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"\>
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="desctription" content="Abstract Gallery for Alex Smith Artist Website"/>
+        <meta name="author" content="Ivy Strope"/>
+        <meta name="date created" content="1/3/2023"/>
+        <meta property="og:image" content="images/Frills.png"/>
+        <meta property="og:description" content="Alex Smith: Investigating themes in Abstraction"/>
+        <meta property="og:title" content="Abstraction Artist: Alex Smith"/>
+        <link rel="icon" href="favicon.ico" type="image/image/x-icon"/>
+        <title>Artist Website: Abstract Gallery</title>
+    </head>
+    <style>
+    .header h1{
+        text-align: center;
+    }
+    .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+        }
+    .sidenav a {
+        padding: 10px 25px 25px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .main header{
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    .main {
+        margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    * {
+        box-sizing: border-box;
+    }
+    .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+    /* Create four equal columns that sits next to each other */
+    .column {
+        -ms-flex: 50%; /* IE10 */
+        flex: 50%;
+        max-width: 50%;
+        padding: 0 4px;
+    }
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 400px) {
+        .column {
+            -ms-flex: 100%;
+            flex: 100%;
+            max-width: 100%;
+        }
+    }
+    .foot_bottom p {
+        font-size: 16px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        margin-left: 200px;
+        text-align: center;
+    }
+    .foot_bottom span {
+        opacity: .4;
+        font-weight: 200;
+        margin-left: 200px;
+    }
+    </style>
+    <body>
+        <!-- Navigation Panel -->
+        <div class="sidenav">
+            <a href="About.html"> About</a>
+            <a href="Current.html">Paintings 2023-Current</a>
+            <a href="Older.html">Paintings 2016-2022</a>
+            <a href="Sketches.html">Sketches</a>
+            <a href="Contact.html"> Contact</a>
+        </div>
+
+        <main class = "main">
+            <header>
+                <h1>Alex Smith <br> Current Paintings</h1>
+            </header>
+            <!-- Gallery Content -->
+            <div class="row">
+                <div class="column">
+                    <img src="images/covid_portrait.png" alt="Objects" stype="width:100%"> 
+                    <img src="images/onergy.png" alt="Portal" style="width:100%">
+                    <img src="images/gravity.png" alt="Nope" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="images/Lurking.png" alt="teddy" style="width:100%">
+                    <img src="images/workers.png" style="width:100%">
+                    <img src="images/cellular.png" style="width:100%">
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <div class="foot_bottom">
+            <p>Made by the one who cares for them most in the world, love you endlessly Alex </p>
+        </div>
+    </body>
+    </html>
