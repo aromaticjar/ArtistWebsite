@@ -39,7 +39,6 @@
     }
     .main header{
         text-align: center;
-        padding-bottom: 50px;
     }
     .main {
         margin-left: 200px; /* Same as the width of the sidenav */
@@ -59,13 +58,100 @@
         -ms-flex: 50%; /* IE10 */
         flex: 50%;
         max-width: 50%;
-        padding: 0 4px;
+        padding: 0 25px;
     }
     .column img {
-        margin-top: 8px;
+        margin-top: 30px;
         vertical-align: middle;
         width: 100%;
+        border-image: url('images/wood_texture.jpg');
+        border-image-slice: 30;
+        border-width: 10px;
+        border-image-outset: 10px;
+        border-style: groove;
     }
+    #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
     /* Responsive layout - makes a two column-layout instead of four columns */
     @media screen and (max-width: 400px) {
         .column {
@@ -73,6 +159,7 @@
             flex: 100%;
             max-width: 100%;
         }
+        .modal-content { width: 100%}
     }
     .foot_bottom p {
         font-size: 16px;
@@ -88,6 +175,33 @@
     }
     </style>
     <body>
+        <script>
+        // create references to the modal...
+        var modal = document.getElementById('myModal');
+        // to all images -- note I'm using a class!
+        var images = document.getElementsByClassName('MyImages');
+        // the image in the modal
+        var modalImg = document.getElementById("img01");
+        // and the caption in the modal
+        var captionText = document.getElementById("caption");
+
+        // Go through all of the images with our custom class
+        for (var i = 0; i < images.length; i++) {
+            var img = images[i];
+            // and attach our click listener for this image.
+            img.onclick = function(evt) {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function(){
+        modal.style.display = "none";
+            }
+         
+    </script>
         <!-- Navigation Panel -->
         <div class="sidenav">
             <a href="About.html"> About</a>
@@ -104,26 +218,34 @@
             <!-- Gallery Content -->
             <div class="row">
                 <div class="column">
-                    <img src="images/bubbles.png" alt="Objects" stype="width:100%"> 
-                    <img src="images/ViewPort.png" alt="Portal" style="width:100%">
-                    <img src="images/Wildthing.png" alt="Nope" style="width:100%">
-                    <img src="images/Internals.png" alt="Internals" style="width:100%">
-                    <img src="images/Networks.png" alt="Networks" style="width: 100%">
-                    <img src="images/portal.png" style="width: 100%">
+                    <img src="images/bubbles.png" alt="Bubbles" class="MyImages" id="myImg" style="width:100%"> 
+                    <img src="images/ViewPort.png" alt="ViewPort" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/Wildthing.png" alt="Nope" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/Internals.png" alt="Internals" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/Networks.png" alt="Networks" class="MyImages" id="myImg" style="width: 100%">
+                    <img src="images/portal.png" alt="portal" class="MyImages" id="myImg" style="width: 100%">
                 </div>
                 <div class="column">
-                    <img src="images/Frills.png" alt="teddy" style="width:100%">
-                    <img src="images/Waterworld.png" style="width:100%">
-                    <img src="images/phenoix.png" style="width:100%">
-                    <img src="images/blanky.png" style="width: 100%">
-                    <img src="images/teddy.png" style="width: 100%">
+                    <img src="images/Frills.png" alt="teddy" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/Waterworld.png" alt="Nope" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/phenoix.png" alt="Pheonix" class="MyImages" id="myImg" style="width:100%">
+                    <img src="images/blanky.png" alt="Blanky" class="MyImages" id="myImg" style="width: 100%">
+                    <img src="images/teddy.png" alt="Teddy" class="MyImages" id="myImg" style="width: 100%">
 
                 </div>
+            </div>
+
+            <!-- The Modal-->
+            <div id="MyModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
             </div>
         </main>
         <!-- Footer -->
         <div class="foot_bottom">
             <p>Made by the one who cares for them most in the world, love you endlessly Alex </p>
         </div>
+        
     </body>
-    </html>
+</html>
